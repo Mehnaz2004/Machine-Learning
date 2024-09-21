@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-dataset = pd.read_csv("multiple_linear_regression_dataset.csv")
+dataset = pd.read_csv(r"Regression\Multiple Linear Reg\multiple_linear_regression_dataset.csv")
 
 print(dataset.isnull().sum())#no empty values
 
