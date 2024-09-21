@@ -4,14 +4,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-dataset = pd.read_csv("linear-reg.csv")
+dataset = pd.read_csv("Regression\Linear-Regression\linear-reg.csv")
 
 #converting the features into 2 dimensional arrays
 x=dataset[["cgpa"]]
 y=dataset[["package"]]
 plt.figure(figsize=(5,3))
 sns.scatterplot(x="cgpa", y="package", data=dataset)
-#plt.show()#yeh hai nahi in slant line
+plt.show()#yeh hai nahi in slant line
 
 #train-testsplit
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random_state=42)#ideal no. of random state 42
@@ -19,9 +19,9 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 lr= LinearRegression()
 lr.fit(x_train, y_train)#model has been trained
 
-print(lr.predict([[8.17]])) #making it predict something
+print(lr.predict([[8.16]])) #making it predict something
 
-print(lr.score(x_test, y_test)*100)#
+print(lr.score(x_test, y_test)*100)#its predicting capability
 
 print(lr.coef_)#finding value of m in y=mx+c
 print(lr.intercept_) #value of c in y=mx+c
